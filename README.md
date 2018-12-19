@@ -16,7 +16,7 @@ First, clone the repo to your home directory using:
 git clone https://github.com/bwhicks/slurm_mnist.git
 ```
 
-This will get you the file in a folder called `slurmn_mnist`
+This will get you the file in a folder called `slurm_mnist`
 
 ## Make an appropriate conda environment
 
@@ -27,7 +27,8 @@ module load anaconda3
 conda create -n tf-gpu matplotlib tensorflow-gpu
 ```
 
-Once this command completes, as long as you have the `anaconda3` module loaded,
+Once this command completes, as long as you have the `anaconda3` module loaded (current session only,
+you'll note that we load it in the Slurm script `mnist.cmd`),
 you'll have access to `conda` and can use it to access the Python
 virtual environment you just created:
 
@@ -79,7 +80,7 @@ Now that you have the data (`mnist.pickle`), you can schedule the job.
 Edit the line of `mnist.cmd` to remove the space in the `--mail-user` line
 and add your Princeton NetID (or other email address)
 
-Then from the `slurm_mnist` run:
+Then from the `slurm_mnist` directory run:
 
 ```
 sbatch mnist.cmd
@@ -92,6 +93,6 @@ via `squeue -u yourusername`.
 You'll also receive start and finish emails.
 
 Once the job runs, you'll have a `slurm-xxxxx.out` file in the `slurm_mnist` with
-tensorflow's messages, and the one expect output, an example graph of images
+tensorflow's messages, and the one expected output, an example graph of images
 with tensorflow's best guess (and whether it was right) for what article of
-clothing they might be.
+clothing they might be. Download it via `scp` and take a look!
