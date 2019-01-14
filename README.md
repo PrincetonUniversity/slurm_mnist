@@ -95,4 +95,4 @@ You'll also receive start and finish emails.
 Once the job runs, you'll have a `slurm-xxxxx.out` file in the `slurm_mnist` with
 tensorflow's messages, and the one expected output, an example graph of images
 with tensorflow's best guess (and whether it was right) for what article of
-clothing they might be. Download it via `scp` and take a look!
+clothing they might be. Download it via `scp` (or connect using `ssh -Y` with an XWindows server and use `eog`) and take a look!
