@@ -6,5 +6,5 @@
 #SBATCH --mail-user=yournetid @princeton.edu
 
 module load anaconda3
-source activate tf
+source activate tf-gpu
 python mnist_classify.py

@@ -8,6 +8,7 @@ from tensorflow import keras
 # see notes there for how to actually work things
 
 fashion_mnist = keras.datasets.fashion_mnist
+print('Downloading mnist data to mnist.pickle...')
 (train_images, train_labels), (test_images, test_labels) = \
     fashion_mnist.load_data()
 
