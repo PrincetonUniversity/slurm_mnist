@@ -1,4 +1,4 @@
-# Using this example
+# Installing and Running TensorFlow on the HPC Clusters
 
 This example is meant to be a repackage of one of the basic TensorFlow tutorials
 for use on one of Princeton University's HPC clusters. It gives a basic recipe
@@ -10,7 +10,8 @@ This adapts one exercise from the TensorFlow/Keras [basic classification tutoria
 
 ## Clone the repo
 
-First, clone the repo to your home directory using:
+Log in to a head node on one of the GPU clusters (Tiger or Adroit).
+Then clone the repo to your home directory using:
 
 ```
 git clone https://github.com/bwhicks/slurm_mnist.git
@@ -30,7 +31,10 @@ conda create -n tf-gpu matplotlib tensorflow-gpu
 Once this command completes, as long as you have the `anaconda3` module loaded (current session only,
 you'll note that we load it in the Slurm script `mnist.cmd`),
 you'll have access to `conda` and can use it to access the Python
-virtual environment you just created:
+virtual environment you just created.
+Note that matplotlib is required for this tutorial but it is not needed in general and can be omitted.
+
+Activate the conda environment:
 
 ```
 conda activate tf-gpu
@@ -96,3 +100,11 @@ Once the job runs, you'll have a `slurm-xxxxx.out` file in the `slurm_mnist` wit
 tensorflow's messages, and the one expected output, an example graph of images
 with tensorflow's best guess (and whether it was right) for what article of
 clothing they might be. Download it via `scp` (or connect using `ssh -Y` with an XWindows server and use `eog`) and take a look!
+
+While there is a CPU-only version of Tensorflow, given that we have two GPU clusters (Tiger and Adroit) and the mathematics of deep learning are ideally suited to GPUs, it is advised to work with the GPU version. However, if you wish to work with the CPU-only version simply remove "-gpu" from the package name when creating the conda environment:
+
+```
+conda create -n tf-cpu matplotlib tensorflow
+```
+
+Please send questions/issues to cses@princeton.edu.
