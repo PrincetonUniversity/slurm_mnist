@@ -101,6 +101,24 @@ tensorflow's messages, and the one expected output, an example graph of images
 with tensorflow's best guess (and whether it was right) for what article of
 clothing they might be. Download it via `scp` (or connect using `ssh -Y` with an XWindows server and use `eog`) and take a look!
 
+## Examining GPU utilization
+
+To see how effectively your job is using the GPU, immediately after submiting the job run the following command:
+
+```
+squeue -u <your-username>
+```
+
+The rightmost column labeled "NODELIST(REASON)" gives the name of the node where your job is running. SSH to this node:
+
+```
+ssh tiger-iXXgYY
+```
+
+Once on the compute node run `watch -n 1 gpustat`. This will show you a percentage value indicating how effectively your code is using the GPU. The memory allocated to the GPU is also available. You will see that only about 16% of the GPU cores are utilized. For a simple tutorial like this, performance is not a concern. However, when you begin running your research codes you should repeat this analysis to ensure that any GPUs you use are being nearly fully utilized.
+
+Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
+
 While there is a CPU-only version of Tensorflow, given that we have two GPU clusters (Tiger and Adroit) and the mathematics of deep learning are ideally suited to GPUs, it is advised to work with the GPU version. However, if you wish to work with the CPU-only version simply remove "-gpu" from the package name when creating the conda environment:
 
 ```
