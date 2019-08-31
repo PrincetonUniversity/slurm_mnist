@@ -1,7 +1,5 @@
 # Installing and Running TensorFlow on the HPC Clusters
 
-## Quick Start
-
 <a href="https://www.tensorflow.org">TensorFlow</a> is a popular deep learning library for training artificial neural networks. The installation instructions depend on the cluster.
 
 #### Adroit or TigerGPU
@@ -30,8 +28,6 @@ conda activate tf-cpu
 ```
 
 Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. `conda activate tf-cpu` is required on the CPU clusters (Perseus and Della).
-
-Conda is the suggested installation method because TensorFlow includes many complex dependencies and it links to Intel MKL for increased performance.
 
 ## Example
 
