@@ -1,5 +1,40 @@
 # Installing and Running TensorFlow on the HPC Clusters
 
+## Quick Start
+
+<a href="https://www.tensorflow.org">TensorFlow</a> is a popular deep learning library for training artificial neural networks. The installation instructions depend on the cluster.
+
+#### Adroit or TigerGPU
+
+```
+module load anaconda3
+conda create --name tf-gpu tensorflow-gpu
+conda activate tf-gpu
+```
+
+#### Traverse
+
+```
+module load anaconda3
+conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/ tensorflow-gpu
+conda activate tf-gpu
+# accept the license agreement
+```
+
+#### Perseus or Della
+
+```
+module load anaconda3
+conda create --name tf-cpu tensorflow
+conda activate tf-cpu
+```
+
+Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. `conda activate tf-cpu` is required on the CPU clusters (Perseus and Della).
+
+Conda is the suggested installation method because TensorFlow includes many complex dependencies and it links to Intel MKL for increased performance.
+
+## Example
+
 This example is meant to be a repackage of one of the basic TensorFlow tutorials
 for use on one of Princeton University's HPC clusters. It gives a basic recipe
 for how to work around a few of the things that make adapting these a challenge.
