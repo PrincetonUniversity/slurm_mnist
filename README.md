@@ -19,7 +19,7 @@ conda activate tf-gpu
 # accept the license agreement if asked
 ```
 
-#### Perseus or Della
+#### Perseus, Della or TigerCPU
 
 ```
 module load anaconda3
@@ -27,7 +27,7 @@ conda create --name tf-cpu tensorflow
 conda activate tf-cpu
 ```
 
-Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. Only `conda activate tf-cpu` is required on the CPU clusters (Perseus and Della).
+Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. Only `conda activate tf-cpu` is required on the CPU clusters (Perseus, Della and TigerCPU).
 
 ## Example
 
