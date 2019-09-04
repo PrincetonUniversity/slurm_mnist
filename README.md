@@ -10,16 +10,22 @@ conda create --name tf-gpu tensorflow-gpu
 conda activate tf-gpu
 ```
 
+Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
+
 #### Traverse
 
 ```
 module load anaconda3
-conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda/ tensorflow-gpu
+conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow-gpu
 conda activate tf-gpu
 # accept the license agreement if asked
 ```
 
+Be sure to include `conda activate tf-gpu` and `#SBATCH --gpus-per-task=1` in your Slurm script.
+
 #### Perseus, Della or TigerCPU
+
+There are two popular CPU-only versions of TensorFlow. One is provided by Anaconda:
 
 ```
 module load anaconda3
@@ -27,7 +33,15 @@ conda create --name tf-cpu tensorflow
 conda activate tf-cpu
 ```
 
-Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script on the GPU clusters. Only `conda activate tf-cpu` is required on the CPU clusters (Perseus, Della and TigerCPU).
+The second is provided by Intel:
+
+```
+module load anaconda3
+conda create --name tf-cpu --channel intel tensorflow
+conda activate tf-cpu
+```
+
+Be sure to include `conda activate tf-cpu` in your Slurm script.
 
 ## Example
 
