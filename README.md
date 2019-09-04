@@ -2,7 +2,7 @@
 
 [TensorFlow](https://www.tensorflow.org) is a popular deep learning library for training artificial neural networks. The installation instructions depend on the cluster:
 
-#### Adroit or TigerGPU
+### Adroit or TigerGPU
 
 ```
 module load anaconda3
@@ -12,7 +12,7 @@ conda activate tf-gpu
 
 Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
 
-#### Traverse
+### Traverse
 
 ```
 module load anaconda3
@@ -23,7 +23,7 @@ conda activate tf-gpu
 
 Be sure to include `conda activate tf-gpu` and `#SBATCH --gpus-per-task=1` in your Slurm script.
 
-#### Perseus, Della or TigerCPU
+### Perseus, Della or TigerCPU
 
 There are two popular CPU-only versions of TensorFlow. One is provided by Anaconda:
 
