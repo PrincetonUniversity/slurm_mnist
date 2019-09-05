@@ -170,4 +170,4 @@ While there is a CPU-only version of Tensorflow, given that we have two GPU clus
 conda create -n tf-cpu matplotlib tensorflow
 ```
 
-Please send questions/issues to cses@princeton.edu.
+If you encounter any difficulties while installing TensorFlow on one of our HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
