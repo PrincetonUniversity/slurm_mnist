@@ -21,7 +21,7 @@ conda activate tf-gpu
 # accept the license agreement if asked
 ```
 
-Be sure to include `conda activate tf-gpu` and `#SBATCH --gpus-per-task=1` in your Slurm script.
+Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
 
 ### Perseus, Della or TigerCPU
 
