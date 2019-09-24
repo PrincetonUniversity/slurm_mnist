@@ -71,7 +71,7 @@ Getting GPU (and some nice MKL) support for Tensorflow is as easy as:
 ```
 # adroit or tigergpu
 module load anaconda3
-conda create -n tf-gpu matplotlib tensorflow-gpu
+conda create --name tf-gpu matplotlib tensorflow-gpu
 ```
 
 Once this command completes, as long as you have the `anaconda3` module loaded (current session only,
@@ -92,7 +92,7 @@ There are no GPUs on the head node of any of the clusters with GPU capacity,
 so you'll need to get one via the scheduler. You can do that interactively with:
 
 ```
-salloc --gres=gpu:1 -t 00:05:00
+salloc --gres=gpu:1 --time=00:05:00
 ```
 
 When your allocation is granted, you'll be moved to a compute node and can then
@@ -118,7 +118,6 @@ module load anaconda3
 conda activate tf-gpu
 cd slurm_mnist
 python mnist_download.py
-
 ```
 
 This will download the data and pickle it to a binary file. This is appropriate
@@ -137,7 +136,7 @@ sbatch mnist.cmd
 
 This will request a GPU, 5 minutes of computing time, and queue the job. You
 should receive a job number and can check if your job is running or queued
-via `squeue -u yourusername`.
+via `squeue -u <YourNetID>`.
 
 You'll also receive start and finish emails.
 
@@ -167,7 +166,7 @@ Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node
 While there is a CPU-only version of Tensorflow, given that we have two GPU clusters (Tiger and Adroit) and the mathematics of deep learning are ideally suited to GPUs, it is advised to work with the GPU version. However, if you wish to work with the CPU-only version simply remove "-gpu" from the package name when creating the conda environment:
 
 ```
-conda create -n tf-cpu matplotlib tensorflow
+conda create --name tf-cpu matplotlib tensorflow
 ```
 
 If you encounter any difficulties while installing TensorFlow on one of our HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
