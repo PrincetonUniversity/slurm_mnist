@@ -21,7 +21,7 @@ Test the installation by running a short job. First, download the necessary data
 python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 ```
 
-The above command will download the file mnist.npz to the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist_classify.py`) which trains a classifier on the MNIST data set:
+The above command will download the file mnist.npz to the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
 
 ```
 from __future__ import absolute_import, division
@@ -48,7 +48,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist.cmd`):
+One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist2.cmd`):
 
 ```
 #!/bin/bash
