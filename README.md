@@ -14,23 +14,14 @@ conda create --name tf2-gpu python=3.7
 conda activate tf2-gpu
 pip install tensorflow-gpu
 ```
- 
-One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. The last few lines of your Slurm should be:
 
-```
-module load anaconda3 cudnn
-conda activate tf2-gpu
-
-srun python mnist_classify.py
-```
-
-To test the install follow these steps:
+Test the installation by running a short job. First, download the necessary data:
 
 ```
 python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 ```
 
-The above command will download the file mnist.npz to the directory ~/.keras/datasets. We can now submit a Slurm script to the job scheduler. Below is our TensorFlow script (mnist_classify.py) which trains a classifier on the MNIST data set:
+The above command will download the file mnist.npz to the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist_classify.py`) which trains a classifier on the MNIST data set:
 
 ```
 from __future__ import absolute_import, division
@@ -57,7 +48,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-Here is a sample Slurm script (`mnist.cmd`):
+One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist.cmd`):
 
 ```
 #!/bin/bash
