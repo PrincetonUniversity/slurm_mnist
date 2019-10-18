@@ -10,6 +10,7 @@
 #SBATCH --mail-type=end          # send email when job ends
 #SBATCH --mail-user=YourNetID@princeton.edu
 
+module purge
 module load anaconda3
 conda activate tf-gpu
 
