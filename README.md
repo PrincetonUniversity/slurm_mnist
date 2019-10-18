@@ -6,7 +6,7 @@
 
 ### TigerGPU or Adroit
 
-TensorFlow 2.0 is not available on Anaconda Cloud yet. However, it is available via PyPI. Follow the installation directions below:
+TensorFlow 2.0 is not available on Anaconda Cloud yet. However, it is available via PyPI. Follow these installation directions:
 
 ```
 module load anaconda3
