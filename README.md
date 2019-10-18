@@ -70,7 +70,7 @@ Submit the job with `sbatch mnist2.cmd`.
 
 ### TigerCPU, Della or Perseus
 
-To install the CPU-only version on TensorFlow 2.0 follow the directions but with this replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
+To install the CPU-only version on TensorFlow 2.0 follow the directions above except replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
 
 ## Version 1.x
 
