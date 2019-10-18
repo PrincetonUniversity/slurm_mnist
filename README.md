@@ -2,7 +2,7 @@
 
 [TensorFlow](https://www.tensorflow.org) is a popular deep learning library for training artificial neural networks. The installation instructions depend on the cluster:
 
-## Version 2.0
+# Version 2.0
 
 ### TigerGPU or Adroit
 
@@ -72,7 +72,7 @@ Submit the job with `sbatch mnist2.cmd`.
 
 To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
 
-## Version 1.x
+# Version 1.x
 
 ### TigerGPU or Adroit
 
