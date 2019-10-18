@@ -231,14 +231,8 @@ The rightmost column labeled "NODELIST(REASON)" gives the name of the node where
 ssh tiger-iXXgYY
 ```
 
-Once on the compute node run `watch -n 1 gpustat`. This will show you a percentage value indicating how effectively your code is using the GPU. The memory allocated to the GPU is also available. You will see that only about 16% of the GPU cores are utilized. For a simple tutorial like this, performance is not a concern. However, when you begin running your research codes you should repeat this analysis to ensure that any GPUs you use are being nearly fully utilized.
+Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a percentage value indicating how effectively your code is using the GPU. The memory allocated to the GPU is also available. You will see that only about 16% of the GPU cores are utilized. For a simple tutorial like this, performance is not a concern. However, when you begin running your research codes you should repeat this analysis to ensure that any GPUs you use are being nearly fully utilized.
 
 Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
-
-While there is a CPU-only version of Tensorflow, given that we have two GPU clusters (Tiger and Adroit) and the mathematics of deep learning are ideally suited to GPUs, it is advised to work with the GPU version. However, if you wish to work with the CPU-only version simply remove "-gpu" from the package name when creating the conda environment:
-
-```
-conda create --name tf-cpu matplotlib tensorflow
-```
 
 If you encounter any difficulties while installing TensorFlow on one of our HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
