@@ -66,7 +66,7 @@ conda activate tf2-gpu
 srun python mnist2_classify.py
 ```
 
-Submit the job with `sbatch mnist.cmd`.
+Submit the job with `sbatch mnist2.cmd`.
 
 ## Version 1.x
 
