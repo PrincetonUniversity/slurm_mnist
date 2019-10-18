@@ -68,6 +68,10 @@ srun python mnist2_classify.py
 
 Submit the job with `sbatch mnist2.cmd`.
 
+### TigerCPU, Della or Perseus
+
+To install the CPU-only version on TensorFlow 2.0 follow the directions but with this replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
+
 ## Version 1.x
 
 ### TigerGPU or Adroit
@@ -111,7 +115,7 @@ conda activate tf-cpu
 
 Be sure to include `conda activate tf-cpu` in your Slurm script.
 
-## Example
+## Example for version 1.x
 
 This example is meant to be a repackage of one of the basic TensorFlow tutorials
 for use on one of Princeton University's HPC clusters. It gives a basic recipe
