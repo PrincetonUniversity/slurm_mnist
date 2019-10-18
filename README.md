@@ -63,7 +63,7 @@ One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will
 module load anaconda3 cudnn
 conda activate tf2-gpu
 
-srun python mnist_classify.py
+srun python mnist2_classify.py
 ```
 
 Submit the job with `sbatch mnist.cmd`.
