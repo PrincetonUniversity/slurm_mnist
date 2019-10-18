@@ -2,7 +2,64 @@
 
 [TensorFlow](https://www.tensorflow.org) is a popular deep learning library for training artificial neural networks. The installation instructions depend on the cluster:
 
-### Adroit or TigerGPU
+## Version 2.0
+
+### TigerGPU or Adroit
+
+TensorFlow 2.0 is not available on Anaconda Cloud yet. However, it is available via PyPI. Follow the installation directions below:
+
+```
+module load anaconda3
+conda create --name tf2-gpu python=3.7
+conda activate tf2-gpu
+pip install tensorflow-gpu
+```
+ 
+One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. The last few lines of your Slurm should be:
+
+```
+module load anaconda3 cudnn
+conda activate tf2-gpu
+
+srun python mnist_classify.py
+```
+
+To test the install follow these steps:
+
+```
+python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
+```
+
+The above command will download the file mnist.npz to the directory ~/.keras/datasets. We can now submit a Slurm script to the job scheduler. Below is our TensorFlow script (mnist_classify.py) which trains a classifier on the MNIST data set:
+
+```
+from __future__ import absolute_import, division
+from __future__ import print_function
+from __future__ import unicode_literals
+
+import tensorflow as tf
+
+mnist = tf.keras.datasets.mnist
+(x_train, y_train), (x_test, y_test) = mnist.load_data()
+x_train, x_test = x_train / 255.0, x_test / 255.0
+
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(28, 28)),
+  tf.keras.layers.Dense(128, activation='relu'),
+  tf.keras.layers.Dropout(0.2),
+  tf.keras.layers.Dense(10, activation='softmax')])
+
+model.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model.fit(x_train, y_train, epochs=5)
+model.evaluate(x_test, y_test)
+```
+
+## Version 1.x
+
+### TigerGPU or Adroit
 
 ```
 module load anaconda3
