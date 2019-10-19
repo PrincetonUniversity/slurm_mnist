@@ -8,7 +8,7 @@
 
 TensorFlow 2.0 is not available on Anaconda Cloud yet. However, it is available via PyPI. Follow these installation directions:
 
-```
+```bash
 module load anaconda3
 conda create --name tf2-gpu python=3.7
 conda activate tf2-gpu
@@ -17,13 +17,13 @@ pip install tensorflow-gpu
 
 Test the installation by running a short job. First, download the necessary data:
 
-```
+```python
 python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 ```
 
 The above command will download `mnist.npz` into the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
 
-```
+```python
 from __future__ import absolute_import, division
 from __future__ import print_function
 from __future__ import unicode_literals
@@ -50,7 +50,7 @@ model.evaluate(x_test, y_test)
 
 One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist2.cmd`):
 
-```
+```bash
 #!/bin/bash
 #SBATCH --job-name=tf2-test      # create a short name for your job
 #SBATCH --nodes=1                # node count
