@@ -131,7 +131,7 @@ Log in to a head node on one of the GPU clusters (Tiger or Adroit).
 Then clone the repo to your home directory using:
 
 ```
-git clone https://github.com/bwhicks/slurm_mnist.git
+git clone https://github.com/PrincetonUniversity/slurm_mnist.git
 ```
 
 This will get you the file in a folder called `slurm_mnist`
