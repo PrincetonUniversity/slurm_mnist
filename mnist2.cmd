@@ -10,4 +10,4 @@
 module load anaconda3 cudnn
 conda activate tf2-gpu
 
-srun python mnist_classify.py
+srun python mnist2_classify.py
