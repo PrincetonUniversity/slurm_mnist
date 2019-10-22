@@ -238,3 +238,7 @@ Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node
 ## Getting Help
 
 If you encounter any difficulties while installing TensorFlow on one of our HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
+
+## Acknowledgements
+
+Kyle Felker has made improvements to this page.
