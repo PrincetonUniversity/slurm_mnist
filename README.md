@@ -6,14 +6,28 @@
 
 ### TigerGPU or Adroit
 
-TensorFlow 2.0 is not available on Anaconda Cloud yet. However, it is available via PyPI. Follow these installation directions:
-
+TensorFlow 2.0 is not yet available on Anaconda Cloud. However, it is available via PyPI. Follow these installation directions:
 ```bash
 module load anaconda3
 conda create --name tf2-gpu python=3.7
 conda activate tf2-gpu
 pip install tensorflow-gpu
 ```
+
+### TigerCPU, Della or Perseus
+
+To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the below Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
+
+### Traverse
+
+A beta releate of TensorFlow 2.0 is available for IBM's Power architecture and Nvidia GPUs on IBM's Conda channel, Watson Machine Learning Community Edition. Follow these installation directions:
+```bash
+module load anaconda3
+conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow2-gpu
+conda activate tf2-gpu
+```
+
+## Example for version 2.x
 
 Test the installation by running a short job. First, download the necessary data:
 
@@ -48,7 +62,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-One must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist2.cmd`):
+For GPU execution, one must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist2.cmd`):
 
 ```bash
 #!/bin/bash
@@ -68,9 +82,6 @@ srun python mnist2_classify.py
 
 Submit the job with `sbatch mnist2.cmd`.
 
-### TigerCPU, Della or Perseus
-
-To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
 
 # Version 1.x
 
