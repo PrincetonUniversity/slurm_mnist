@@ -6,21 +6,22 @@
 
 ### TigerGPU or Adroit
 
-TensorFlow 2.0 is not yet available on Anaconda Cloud. However, it is available via PyPI. Follow these installation directions:
+TensorFlow 2.0 is available on Anaconda Cloud:
+
 ```bash
 module load anaconda3
-conda create --name tf2-gpu python=3.7
+conda create --name tf2-gpu tensorflow-gpu
 conda activate tf2-gpu
-pip install tensorflow-gpu
 ```
 
 ### TigerCPU, Della or Perseus
 
-To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `pip install tensorflow-gpu` with `pip install tensorflow`. In the below Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
+To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `tensorflow-gpu` with `tensorflow`. In the below Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
 
 ### Traverse
 
 A beta release of TensorFlow 2.0 is available for IBM's Power architecture and Nvidia GPUs on IBM's Conda channel, Watson Machine Learning Community Edition. Follow these installation directions:
+
 ```bash
 module load anaconda3
 conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow2-gpu
