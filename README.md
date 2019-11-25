@@ -63,7 +63,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-For GPU execution, one must include `module load cudnn` in the Slurm script or `libcudnn.so.7` will not be found. Here is a sample Slurm script (`mnist2.cmd`):
+Here is a sample Slurm script (`mnist2.cmd`):
 
 ```bash
 #!/bin/bash
@@ -75,7 +75,7 @@ For GPU execution, one must include `module load cudnn` in the Slurm script or `
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 
-module load anaconda3 cudnn
+module load anaconda3
 conda activate tf2-gpu
 
 srun python mnist2_classify.py
