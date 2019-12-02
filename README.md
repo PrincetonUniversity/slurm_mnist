@@ -16,7 +16,7 @@ conda activate tf2-gpu
 
 ### TigerCPU, Della or Perseus
 
-To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `tensorflow-gpu` with `tensorflow`. In the below Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`).
+To install the CPU-only version of TensorFlow 2.0 follow the directions above except replacement `tensorflow-gpu` with `tensorflow`. In the below Slurm script you must remove the gpu line (`#SBATCH --gres=gpu:1`) and the `cudnn` module should not be loaded so delete that as well (but leave `anaconda3`). For tips on running on CPUs see [this page](https://github.com/jdh4/tensorflow_performance).
 
 ### Traverse
 
@@ -125,7 +125,7 @@ conda create --name tf-cpu --channel intel tensorflow
 conda activate tf-cpu
 ```
 
-Be sure to include `conda activate tf-cpu` in your Slurm script.
+Be sure to include `conda activate tf-cpu` in your Slurm script. For tips on running on CPUs see [this page](https://github.com/jdh4/tensorflow_performance).
 
 ## Example for version 1.x
 
