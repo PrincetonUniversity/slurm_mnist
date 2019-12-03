@@ -28,7 +28,7 @@ conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pu
 conda activate tf2-gpu
 ```
 
-## Example for version 2.x
+## Example for Version 2.x
 
 Test the installation by running a short job. First, download the necessary data:
 
@@ -127,7 +127,7 @@ conda activate tf-cpu
 
 Be sure to include `conda activate tf-cpu` in your Slurm script. For tips on running on CPUs see [this page](https://github.com/jdh4/tensorflow_performance).
 
-## Example for version 1.x
+## Example for Version 1.x
 
 This example is meant to be a repackage of one of the basic TensorFlow tutorials
 for use on one of Princeton University's HPC clusters. It gives a basic recipe
