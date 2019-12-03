@@ -134,10 +134,10 @@ for use on one of Princeton University's HPC clusters. It gives a basic recipe
 for how to work around a few of the things that make adapting these a challenge.
 And it will help to make sure you have a working GPU environment.
 
-## First, read the actual tutorial
+### First, read the actual tutorial
 This adapts one exercise from the TensorFlow/Keras [basic classification tutorial](https://www.tensorflow.org/tutorials/keras/basic_classification).
 
-## Clone the repo
+### Clone the repo
 
 Log in to a head node on one of the GPU clusters (Tiger or Adroit).
 Then clone the repo to your home directory using:
@@ -148,7 +148,7 @@ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
 
 This will get you the file in a folder called `slurm_mnist`
 
-## Make an appropriate conda environment
+### Make an appropriate conda environment
 
 Getting GPU (and some nice MKL) support for Tensorflow is as easy as:
 
@@ -170,7 +170,7 @@ Activate the conda environment:
 conda activate tf-gpu
 ```
 
-## Verify that you have a working GPU enabled Tensorflow
+### Verify that you have a working GPU enabled Tensorflow
 
 There are no GPUs on the head node of any of the clusters with GPU capacity,
 so you'll need to get one via the scheduler. You can do that interactively with:
@@ -190,7 +190,7 @@ python -c "from tensorflow.python.client import device_lib; print(device_lib.lis
 
 This should print a GPU, indicating you have a working install.
 
-## Running the example
+### Running the example
 
 This is now a two step process, because compute nodes do not have internet access
 to download the Keras training set, so we'll be pickling it for later use.
@@ -229,7 +229,7 @@ tensorflow's messages, and the one expected output, an example graph of images
 with tensorflow's best guess (and whether it was right) for what article of
 clothing they might be. Download it via `scp` (or connect using `ssh -Y` with an XWindows server and use `eog`) and take a look!
 
-## Examining GPU utilization
+### Examining GPU utilization
 
 To see how effectively your job is using the GPU, immediately after submiting the job run the following command:
 
