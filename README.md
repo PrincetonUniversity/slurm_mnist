@@ -90,7 +90,7 @@ Submit the job with `sbatch mnist2.cmd`.
 
 ```
 module load anaconda3
-conda create --name tf-gpu tensorflow-gpu
+conda create --name tf-gpu tensorflow-gpu=1.15
 conda activate tf-gpu
 ```
 
@@ -113,7 +113,7 @@ There are two popular CPU-only versions of TensorFlow. One is provided by Anacon
 
 ```
 module load anaconda3
-conda create --name tf-cpu tensorflow
+conda create --name tf-cpu tensorflow=1.15
 conda activate tf-cpu
 ```
 
@@ -121,7 +121,7 @@ The second is provided by Intel:
 
 ```
 module load anaconda3
-conda create --name tf-cpu --channel intel tensorflow
+conda create --name tf-cpu --channel intel tensorflow=1.15
 conda activate tf-cpu
 ```
 
@@ -155,7 +155,7 @@ Getting GPU (and some nice MKL) support for Tensorflow is as easy as:
 ```
 # adroit or tigergpu
 module load anaconda3
-conda create --name tf-gpu matplotlib tensorflow-gpu
+conda create --name tf-gpu matplotlib tensorflow-gpu=1.15
 ```
 
 Once this command completes, as long as you have the `anaconda3` module loaded (current session only,
