@@ -23,16 +23,16 @@ To install the CPU-only version of TensorFlow 2.0 follow the directions above ex
 A beta release of TensorFlow 2.0 is available for IBM's Power architecture and NVIDIA GPUs on IBM's Conda channel, Watson Machine Learning Community Edition. Follow these installation directions:
 
 ```bash
-module load anaconda3
-conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow2-gpu
-conda activate tf2-gpu
+$ module load anaconda3
+$ conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow2-gpu
+$ conda activate tf2-gpu
 ```
 
 ## Example for Version 2.x
 
 Test the installation by running a short job. First, download the necessary data:
 
-```python
+```bash
 $ python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 ```
 
