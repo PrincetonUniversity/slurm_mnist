@@ -36,7 +36,7 @@ Test the installation by running a short job. First, download the necessary data
 $ python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 ```
 
-The above command will download `mnist.npz` into the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
+The above command will download `mnist.npz` into the directory `~/.keras/datasets`. To run the example follow these commands:
 
 ```
 $ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
@@ -44,7 +44,7 @@ $ cd slurm_mnist
 $ sbatch job.slurm
 ```
 
-Below is Tensorflow script (`mnist2_classify.py`):
+Below is the TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
 
 ```python
 from __future__ import absolute_import, division
@@ -71,7 +71,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-Here is a sample Slurm script (`job.slurm`):
+Here is the Slurm script (`job.slurm`):
 
 ```bash
 #!/bin/bash
@@ -83,6 +83,7 @@ Here is a sample Slurm script (`job.slurm`):
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 
+module purge
 module load anaconda3
 conda activate tf2-gpu
 
