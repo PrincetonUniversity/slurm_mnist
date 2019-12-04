@@ -39,9 +39,9 @@ python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 The above command will download `mnist.npz` into the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
 
 ```
-$ git clone
+$ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
 $ cd slurm_mnist
-$ sbatch mnist2.cmd
+$ sbatch job.slurm
 ```
 
 Below is Tensorflow script (`mnist2_classify.py`):
