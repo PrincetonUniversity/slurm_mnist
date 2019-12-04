@@ -7,6 +7,7 @@
 #SBATCH --gres=gpu:1             # number of gpus per node
 #SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
 
+module purge
 module load anaconda3
 conda activate tf2-gpu
 
