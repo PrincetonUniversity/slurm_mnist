@@ -9,9 +9,9 @@
 TensorFlow 2.0 is available on Anaconda Cloud:
 
 ```bash
-module load anaconda3
-conda create --name tf2-gpu tensorflow-gpu
-conda activate tf2-gpu
+$ module load anaconda3
+$ conda create --name tf2-gpu tensorflow-gpu
+$ conda activate tf2-gpu
 ```
 
 ### TigerCPU, Della or Perseus
@@ -33,7 +33,7 @@ conda activate tf2-gpu
 Test the installation by running a short job. First, download the necessary data:
 
 ```python
-python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
+$ python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 ```
 
 The above command will download `mnist.npz` into the directory `~/.keras/datasets`. Below is our TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
@@ -94,9 +94,9 @@ srun python mnist2_classify.py
 ### TigerGPU or Adroit
 
 ```
-module load anaconda3
-conda create --name tf-gpu tensorflow-gpu=1.15
-conda activate tf-gpu
+$ module load anaconda3
+$ conda create --name tf-gpu tensorflow-gpu=1.15
+$ conda activate tf-gpu
 ```
 
 Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
@@ -104,9 +104,9 @@ Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Sl
 ### Traverse
 
 ```
-module load anaconda3
-conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow-gpu
-conda activate tf-gpu
+$ module load anaconda3
+$ conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow-gpu
+$ conda activate tf-gpu
 # accept the license agreement if asked
 ```
 
@@ -117,9 +117,9 @@ Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Sl
 There are two popular CPU-only versions of TensorFlow. One is provided by Anaconda:
 
 ```
-module load anaconda3
-conda create --name tf-cpu tensorflow=1.15
-conda activate tf-cpu
+$ module load anaconda3
+$ conda create --name tf-cpu tensorflow=1.15
+$ conda activate tf-cpu
 ```
 
 The second is provided by Intel:
@@ -148,7 +148,7 @@ Log in to a head node on one of the GPU clusters (Tiger or Adroit).
 Then clone the repo to your home directory using:
 
 ```
-git clone https://github.com/PrincetonUniversity/slurm_mnist.git
+$ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
 ```
 
 This will get you the file in a folder called `slurm_mnist`
@@ -159,8 +159,8 @@ Getting GPU (and some nice MKL) support for Tensorflow is as easy as:
 
 ```
 # adroit or tigergpu
-module load anaconda3
-conda create --name tf-gpu matplotlib tensorflow-gpu=1.15
+$ module load anaconda3
+$ conda create --name tf-gpu matplotlib tensorflow-gpu=1.15
 ```
 
 Once this command completes, as long as you have the `anaconda3` module loaded (current session only,
@@ -172,7 +172,7 @@ Note that matplotlib is required for this tutorial but it is not needed in gener
 Activate the conda environment:
 
 ```
-conda activate tf-gpu
+$ conda activate tf-gpu
 ```
 
 ### Verify that you have a working GPU enabled Tensorflow
@@ -181,16 +181,16 @@ There are no GPUs on the head node of any of the clusters with GPU capacity,
 so you'll need to get one via the scheduler. You can do that interactively with:
 
 ```
-salloc -N 1 -n 1 --time=00:05:00 --gres=gpu:1
+$ salloc -N 1 -n 1 --time=00:05:00 --gres=gpu:1
 ```
 
 When your allocation is granted, you'll be moved to a compute node and can then
 run:
 
 ```
-module load anaconda3
-conda activate tf-gpu
-python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
+$ module load anaconda3
+$ conda activate tf-gpu
+$ python -c "from tensorflow.python.client import device_lib; print(device_lib.list_local_devices())"
 ```
 
 This should print a GPU, indicating you have a working install.
@@ -203,10 +203,10 @@ to download the Keras training set, so we'll be pickling it for later use.
 From your home directory
 
 ```
-module load anaconda3
-conda activate tf-gpu
-cd slurm_mnist
-python mnist_download.py
+$ module load anaconda3
+$ conda activate tf-gpu
+$ cd slurm_mnist
+$ python mnist_download.py
 ```
 
 This will download the data and pickle it to a binary file. This is appropriate
@@ -220,7 +220,7 @@ and add your Princeton NetID (or other email address)
 Then from the `slurm_mnist` directory run:
 
 ```
-sbatch mnist.cmd
+$ sbatch mnist.cmd
 ```
 
 This will request a GPU, 5 minutes of computing time, and queue the job. You
@@ -239,13 +239,13 @@ clothing they might be. Download it via `scp` (or connect using `ssh -Y` with an
 To see how effectively your job is using the GPU, immediately after submiting the job run the following command:
 
 ```
-squeue -u <your-username>
+$ squeue -u <your-username>
 ```
 
 The rightmost column labeled "NODELIST(REASON)" gives the name of the node where your job is running. SSH to this node:
 
 ```
-ssh tiger-iXXgYY
+$ ssh tiger-iXXgYY
 ```
 
 Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a percentage value indicating how effectively your code is using the GPU. The memory allocated to the GPU is also available. You will see that only about 16% of the GPU cores are utilized. For a simple tutorial like this, performance is not a concern. However, when you begin running your research codes you should repeat this analysis to ensure that any GPUs you use are being nearly fully utilized.
