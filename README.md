@@ -176,7 +176,7 @@ There are no GPUs on the head node of any of the clusters with GPU capacity,
 so you'll need to get one via the scheduler. You can do that interactively with:
 
 ```
-salloc --gres=gpu:1 --time=00:05:00
+salloc -N 1 -n 1 --time=00:05:00 --gres=gpu:1
 ```
 
 When your allocation is granted, you'll be moved to a compute node and can then
