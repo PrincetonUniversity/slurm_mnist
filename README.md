@@ -126,9 +126,9 @@ $ conda activate tf-cpu
 The second is provided by Intel:
 
 ```
-module load anaconda3
-conda create --name tf-cpu --channel intel tensorflow=1.15
-conda activate tf-cpu
+$ module load anaconda3
+$ conda create --name tf-cpu --channel intel tensorflow=1.15
+$ conda activate tf-cpu
 ```
 
 Be sure to include `conda activate tf-cpu` in your Slurm script. For tips on running on CPUs see [this page](https://github.com/jdh4/tensorflow_performance).
