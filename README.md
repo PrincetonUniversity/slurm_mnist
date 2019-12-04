@@ -71,7 +71,7 @@ model.fit(x_train, y_train, epochs=5)
 model.evaluate(x_test, y_test)
 ```
 
-Here is a sample Slurm script (`mnist2.cmd`):
+Here is a sample Slurm script (`job.slurm`):
 
 ```bash
 #!/bin/bash
