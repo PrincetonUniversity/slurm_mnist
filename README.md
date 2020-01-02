@@ -10,7 +10,7 @@ TensorFlow 2.0 is available on Anaconda Cloud:
 
 ```bash
 $ module load anaconda3
-$ conda create --name tf2-gpu tensorflow-gpu <additional-package-1> <additional-package-2> ... <additional-package-N>
+$ conda create --name tf2-gpu tensorflow-gpu <package-2> <package-3> ... <additional-package-N>
 $ conda activate tf2-gpu
 ```
 
@@ -96,7 +96,7 @@ srun python mnist2_classify.py
 
 ```
 $ module load anaconda3
-$ conda create --name tf-gpu tensorflow-gpu=1.15
+$ conda create --name tf-gpu tensorflow-gpu=1.15 <package-2> <package-3> ... <additional-package-N>
 $ conda activate tf-gpu
 ```
 
