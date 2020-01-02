@@ -119,7 +119,7 @@ There are two popular CPU-only versions of TensorFlow. One is provided by Anacon
 
 ```
 $ module load anaconda3
-$ conda create --name tf-cpu tensorflow=1.15
+$ conda create --name tf-cpu tensorflow=1.15 <package-2> <package-3> ... <package-N>
 $ conda activate tf-cpu
 ```
 
@@ -127,7 +127,7 @@ The second is provided by Intel:
 
 ```
 $ module load anaconda3
-$ conda create --name tf-cpu --channel intel tensorflow=1.15
+$ conda create --name tf-cpu --channel intel tensorflow=1.15 <package-2> <package-3> ... <package-N>
 $ conda activate tf-cpu
 ```
 
