@@ -253,6 +253,32 @@ Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a perce
 
 Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
 
+## Where to Store Your Files
+
+You should run your jobs out of `/scratch/gpfs/<NetID>` on the HPC clusters. These filesystems are very fast and provide vast amounts of storage. Do not run jobs out of `/tigress`. That is, you should never be writing the output of actively running jobs to `/tigress`. The `/tigress` filesystem is slow and it should only be used for backing up the files that you produce on `/scratch/gpfs`. Your `/home` directory on all clusters is small and it should only be used for storing source code and executables.
+
+The commands below give you an idea of how to properly run a TensorFlow job:
+
+```
+$ ssh <NetID>@tigergpu.princeton.edu
+$ cd /scratch/gpfs/<NetID>
+$ mkdir myjob && cd myjob
+# put Python script and Slurm script in myjob
+$ sbatch job.slurm
+```
+
+If the run produces data that you want to backup then copy or move it to `/tigress`:
+
+```
+$ cp -r /scratch/gpfs/<NetID>/myjob /tigress/<NetID>
+```
+
+For large transfers consider using `rsync` instead of `cp`. Most users only do back-ups to `/tigress` every week or so. While `/scratch/gpfs` is not backed-up, files are never removed. However, important results should be transferred to `/tigress`.
+
+The diagram below gives an overview of the filesystems:
+
+![tigress](https://tigress-web.princeton.edu/~jdh4/hpc_princeton_filesystems.png)
+
 ## Getting Help
 
 If you encounter any difficulties while installing TensorFlow on one of our HPC clusters then please send an email to <a href="mailto:cses@princeton.edu">cses@princeton.edu</a> or attend a <a href="https://researchcomputing.princeton.edu/education/help-sessions">help session</a>.
