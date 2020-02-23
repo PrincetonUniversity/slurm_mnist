@@ -255,10 +255,8 @@ Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node
 
 ## Using PyCharm on TigerGPU
 
-https://youtu.be/0XmZsfixAdw
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw
-" target="_blank"><img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" 
-alt="PyCharm" width="240" height="180" border="10" /></a>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw" target="_blank">
+<img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="320" height="180" border="10" /></a>
 
 ## Where to Store Your Files
 
