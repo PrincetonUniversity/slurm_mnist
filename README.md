@@ -253,6 +253,13 @@ Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a perce
 
 Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
 
+## Using PyCharm on TigerGPU
+
+https://youtu.be/0XmZsfixAdw
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw
+" target="_blank"><img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" 
+alt="PyCharm" width="240" height="180" border="10" /></a>
+
 ## Where to Store Your Files
 
 You should run your jobs out of `/scratch/gpfs/<NetID>` on the HPC clusters. These filesystems are very fast and provide vast amounts of storage. **Do not run jobs out of `/tigress` or `/projects`. That is, you should never be writing the output of actively running jobs to those filesystems.** `/tigress` and `/projects` are slow and should only be used for backing up the files that you produce on `/scratch/gpfs`. Your `/home` directory on all clusters is small and it should only be used for storing source code and executables.
