@@ -2,7 +2,7 @@
 
 [TensorFlow](https://www.tensorflow.org) is a popular deep learning library for training artificial neural networks. The installation instructions depend on the version and cluster:
 
-# Version 2.0
+# Version 2.x
 
 ### TigerGPU or Adroit
 
