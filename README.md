@@ -237,7 +237,7 @@ clothing they might be. Download it via `scp` (or connect using `ssh -Y` with an
 
 ### Examining GPU utilization
 
-To see how effectively your job is using the GPU, immediately after submiting the job run the following command:
+To see how effectively your job is using the GPU, immediately after submitting the job run the following command:
 
 ```
 $ squeue -u <your-username>
@@ -260,7 +260,7 @@ Models that are built using keras can be made to run on multiple GPUs quite easi
 ## Using PyCharm on TigerGPU
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw" target="_blank">
-<img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="320" height="180" border="0" /></a>
+<img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="480" height="270" border="0" /></a>
 
 ## Where to Store Your Files
 
