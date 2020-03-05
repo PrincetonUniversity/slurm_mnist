@@ -253,6 +253,8 @@ Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a perce
 
 Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
 
+[View](https://researchcomputing.princeton.edu/node/7171) the GPU utilization dashboard for TigerGPU.
+
 ## Running on Mulitiple GPUs on a Single Node
 
 Models that are built using keras can be made to run on multiple GPUs quite easily. This is done by copying the model and having each GPU process a different mini-batch. For more see [this example](https://www.tensorflow.org/guide/distributed_training#using_tfdistributestrategy_with_keras).
