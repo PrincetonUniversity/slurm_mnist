@@ -262,23 +262,26 @@ Models that are built using keras can be made to run on multiple GPUs quite easi
 The procedure below was found to work on Della:
 
 ```bash
-ssh della
-module load anaconda3
+$ ssh della
+$ module load anaconda3
 # anaconda3 provides us with pip six numpy wheel setuptools mock
-pip install -U --user keras_applications --no-deps pip install -U --user keras_preprocessing --no-deps
+$ pip install -U --user keras_applications --no-deps pip install -U --user keras_preprocessing --no-deps
 
-cd /tmp/bazel/
-wget https://github.com/bazelbuild/bazel/releases/download/2.0.0/bazel-2.0.0-installer-linux-x86_64.sh
-chmod +x bazel-2.0.0-installer-linux-x86_64.sh
-./bazel-2.0.0-installer-linux-x86_64.sh --prefix=/tmp/bazel export PATH=/tmp/bazel/bin:$PATH
+$ cd /tmp/bazel/
+$ wget https://github.com/bazelbuild/bazel/releases/download/2.0.0/bazel-2.0.0-installer-linux-x86_64.sh
+$ chmod +x bazel-2.0.0-installer-linux-x86_64.sh
+$ ./bazel-2.0.0-installer-linux-x86_64.sh --prefix=/tmp/bazel export PATH=/tmp/bazel/bin:$PATH
 
-cd ~/sw
-git clone https://github.com/tensorflow/tensorflow.git
-cd tensorflow
-./configure  # took defaults or answered no module load rh/devtoolset/7 CC=`which gcc` BAZEL_LINKLIBS=-l%:libstdc++.a bazel build --verbose_failures //tensorflow/tools/pip_package:build_pip_package
-./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg pip install --user /tmp/tensorflow_pkg/tensorflow-2.1.0-cp37-cp37m-linux_x86_64.whl
-cd
-python
+$ cd ~/sw
+$ git clone https://github.com/tensorflow/tensorflow.git
+$ cd tensorflow
+$ ./configure  # took defaults or answered no
+$ module load rh/devtoolset/7
+$ CC=`which gcc` BAZEL_LINKLIBS=-l%:libstdc++.a bazel build --verbose_failures //tensorflow/tools/pip_package:build_pip_package
+$ ./bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+$ pip install --user /tmp/tensorflow_pkg/tensorflow-2.1.0-cp37-cp37m-linux_x86_64.whl
+$ cd
+$ python
 >>> import tensorflow as tf
 ```
 
