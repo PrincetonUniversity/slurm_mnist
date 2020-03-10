@@ -58,6 +58,7 @@ Then clone the repo to your home directory using:
 
 ```
 $ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
+$ cd slurm_mnist/version_1.x
 ```
 
 This will get you the file in a folder called `slurm_mnist`
