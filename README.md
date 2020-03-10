@@ -44,7 +44,7 @@ $ cd slurm_mnist
 $ sbatch job.slurm
 ```
 
-Below is the TensorFlow script (`mnist2_classify.py`) which trains a classifier on the MNIST data set:
+Below is the TensorFlow script (`mnist_classify.py`) which trains a classifier on the MNIST data set:
 
 ```python
 from __future__ import absolute_import, division
@@ -87,7 +87,7 @@ module purge
 module load anaconda3
 conda activate tf2-gpu
 
-srun python mnist2_classify.py
+srun python mnist_classify.py
 ```
 
 ### Examining GPU utilization
