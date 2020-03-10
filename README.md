@@ -110,6 +110,8 @@ Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node
 
 [View](https://researchcomputing.princeton.edu/node/7171) the GPU utilization dashboard for TigerGPU.
 
+TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make changes to your TensorFlow script. This is covered next.
+
 ## Using Mulitiple GPUs
 
 Most models can be trained on a single GPU. If you are effectively using the GPU as determined by the procedure above then you may consider running on multiple GPUs. In general this will lead to shorter training times but because more resources are required the queue time will increase.
