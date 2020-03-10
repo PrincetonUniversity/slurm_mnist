@@ -114,7 +114,7 @@ TensorFlow will run all possible operations on the GPU by default. However, if y
 
 ## Using Mulitiple GPUs
 
-Most models can be trained on a single GPU. If you are effectively using the GPU as determined by the procedure above then you may consider running on multiple GPUs. In general this will lead to shorter training times but because more resources are required the queue time will increase.
+Most models can be trained on a single GPU. If you are effectively using the GPU as determined by the procedure above then you may consider running on multiple GPUs. In general this will lead to shorter training times but because more resources are required the queue time will increase. When using more resources for your job you should always do a scaling analysis. Here is an [example](https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/05_multithreaded_numpy) for CPUs (see table at the bottom).
 
 Models that are built using tf.keras can be made to run on multiple GPUs quite easily. This is done by using a [data parallel](https://www.tensorflow.org/guide/distributed_training#using_tfdistributestrategy_with_keras) approach where a copy of the model is assiged to each GPU where it operates on a different mini-batch. TensorFlow offers ways to use multiple GPUs with the subclassing API as well (see [tf.distribute](https://www.tensorflow.org/api/stable) and [tutorials](https://www.tensorflow.org/guide/distributed_training)).
 
