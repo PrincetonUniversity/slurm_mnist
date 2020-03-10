@@ -129,7 +129,7 @@ and add your Princeton NetID (or other email address)
 Then from the `slurm_mnist` directory run:
 
 ```
-$ sbatch mnist.cmd
+$ sbatch job.slurm
 ```
 
 This will request a GPU, 5 minutes of computing time, and queue the job. You
