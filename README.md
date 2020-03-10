@@ -6,7 +6,7 @@
 
 ### TigerGPU or Adroit
 
-TensorFlow 2.0 is available on Anaconda Cloud:
+TensorFlow 2.x is available on Anaconda Cloud:
 
 ```
 $ module load anaconda3
