@@ -120,6 +120,8 @@ Models that are built using tf.keras can be made to run on multiple GPUs quite e
 
 TensorFlow offers an approach for using multiple GPUs on [multiple nodes](https://www.tensorflow.org/guide/distributed_training#multiworkermirroredstrategy). [Horovod](https://github.com/horovod/horovod) can also be used.
 
+For hyperparameter tuning consider using a [job array](https://github.com/PrincetonUniversity/hpc_beginning_workshop/tree/master/06_slurm). This will allow you to run multiple jobs with one `sbatch` command. Each job within the array trains the network using a different set of parameters.
+
 ## Tensorboard
 
 [Tensorboard](https://www.tensorflow.org/tensorboard/get_started) comes included in a Conda installation of TensorFlow. It can be used to view your graph, monitor training progress and more. It can be used on the head node of a cluster in non-intensive cases. It can be used intensively on Tigressdata.
