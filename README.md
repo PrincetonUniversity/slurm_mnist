@@ -20,7 +20,7 @@ To install the CPU-only version of TensorFlow 2.0 follow the directions above ex
 
 ### Traverse
 
-A beta release of TensorFlow 2.0 is available for IBM's Power architecture and NVIDIA GPUs on IBM's Conda channel, Watson Machine Learning Community Edition. Follow these installation directions:
+TensorFlow 2.x is available for IBM's Power architecture and NVIDIA GPUs on IBM's Conda channel, Watson Machine Learning Community Edition. Follow these installation directions:
 
 ```bash
 $ module load anaconda3
