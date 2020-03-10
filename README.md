@@ -90,7 +90,11 @@ conda activate tf2-gpu
 srun python mnist_classify.py
 ```
 
-### Examining GPU utilization
+# Version 1.x
+
+Directions for installing and running Version 1.x are [here](version_1.x/README.md).
+
+## Examining GPU utilization
 
 To see how effectively your job is using the GPU, immediately after submitting the job run the following command:
 
