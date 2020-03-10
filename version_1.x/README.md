@@ -123,7 +123,7 @@ on the head node in terms of getting a dataset.
 
 Now that you have the data (`mnist.pickle`), you can schedule the job.
 
-Edit the line of `mnist.cmd` to remove the space in the `--mail-user` line
+Edit the line of `job.slurm` to remove the space in the `--mail-user` line
 and add your Princeton NetID (or other email address)
 
 Then from the `slurm_mnist` directory run:
