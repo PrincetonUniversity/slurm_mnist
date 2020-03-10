@@ -28,7 +28,7 @@ $ conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/
 $ conda activate tf2-gpu
 ```
 
-## Example for Version 2.x
+## Example
 
 Test the installation by running a short job. First, download the necessary data:
 
