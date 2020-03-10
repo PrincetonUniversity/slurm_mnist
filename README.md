@@ -1,6 +1,6 @@
 # Installing and Running TensorFlow on the HPC Clusters
 
-[TensorFlow](https://www.tensorflow.org) is a popular deep learning library for training artificial neural networks. The installation instructions depend on the version and cluster. Directions for TensorFlow 1.x are [here](version_1.x/README.md).
+[TensorFlow](https://www.tensorflow.org) is a popular deep learning library for training artificial neural networks. The installation instructions depend on the version and cluster. This page covers version 2.x. Directions for TensorFlow 1.x are [here](version_1.x/README.md).
 
 # Version 2.x
 
