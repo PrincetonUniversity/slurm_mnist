@@ -74,7 +74,7 @@ $ conda create --name tf-gpu matplotlib tensorflow-gpu=1.15
 ```
 
 Once this command completes, as long as you have the `anaconda3` module loaded (current session only,
-you'll note that we load it in the Slurm script `mnist.cmd`),
+you'll note that we load it in the Slurm script `job.slurm`),
 you'll have access to `conda` and can use it to access the Python
 virtual environment you just created.
 Note that matplotlib is required for this tutorial but it is not needed in general and can be omitted.
@@ -127,7 +127,7 @@ Now that you have the data (`mnist.pickle`), you can schedule the job.
 Edit the line of `job.slurm` to remove the space in the `--mail-user` line
 and add your Princeton NetID (or other email address)
 
-Then from the `slurm_mnist` directory run:
+Then from the `slurm_mnist/version_1.x` directory run:
 
 ```
 $ sbatch job.slurm
@@ -135,7 +135,7 @@ $ sbatch job.slurm
 
 This will request a GPU, 5 minutes of computing time, and queue the job. You
 should receive a job number and can check if your job is running or queued
-via `squeue -u <YourNetID>`.
+via `squeue -u $USER`.
 
 You'll also receive start and finish emails.
 
