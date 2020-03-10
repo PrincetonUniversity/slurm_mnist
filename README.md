@@ -144,7 +144,7 @@ The Cascade Lake nodes on Della are capable on [Intel VNNI](https://www.intel.ai
 The procedure below was found to work on Della:
 
 ```bash
-$ ssh della
+# ssh della
 $ module load anaconda3
 # anaconda3 provides us with pip six numpy wheel setuptools mock
 $ pip install -U --user keras_applications --no-deps pip install -U --user keras_preprocessing --no-deps
