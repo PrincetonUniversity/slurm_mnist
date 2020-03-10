@@ -116,7 +116,9 @@ Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node
 
 ## Running on Mulitiple GPUs on a Single Node
 
-Models that are built using keras can be made to run on multiple GPUs quite easily. This is done by copying the model and having each GPU process a different mini-batch. For more see [this example](https://www.tensorflow.org/guide/distributed_training#using_tfdistributestrategy_with_keras).
+Most models can be trained on a single GPU. If you are effectively using the GPU as determined by the procedure above then you may consider running on multiple GPUs. In general this will lead to shorter training times but because more resources are required the queue time will increase.
+
+Models that are built using keras can be made to run on multiple GPUs quite easily. This is done by using a [data parallel](https://www.tensorflow.org/guide/distributed_training#using_tfdistributestrategy_with_keras) approach where a copy of the model is assiged to each GPU where it operates on a different mini-batch. TensorFlow offers ways to use multiple GPUs with the subclassing API as well (see [tf.distribute](https://www.tensorflow.org/api/stable)).
 
 ## Building from Source
 
