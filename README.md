@@ -14,6 +14,8 @@ $ conda create --name tf2-gpu tensorflow-gpu <package-2> <package-3> ... <packag
 $ conda activate tf2-gpu
 ```
 
+Be sure to include `conda activate tf2-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
+
 ### TigerCPU, Della or Perseus
 
 To install the CPU-only version of TensorFlow 2.0 follow the directions above except replace `tensorflow-gpu` with `tensorflow` and `tf2-gpu` with `tf2-cpu`. In the Slurm script below you must remove the gpu line (`#SBATCH --gres=gpu:1`) and be sure to use the environment name `tf2-cpu`. For tips on running on CPUs see [this page](cpu_only/README.md).
