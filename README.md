@@ -114,7 +114,7 @@ Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node
 
 [View](https://researchcomputing.princeton.edu/node/7171) the GPU utilization dashboard for TigerGPU.
 
-## Running on Mulitiple GPUs on a Single Node
+## Using Mulitiple GPUs
 
 Most models can be trained on a single GPU. If you are effectively using the GPU as determined by the procedure above then you may consider running on multiple GPUs. In general this will lead to shorter training times but because more resources are required the queue time will increase.
 
@@ -124,7 +124,20 @@ TensorFlow offers an approach for using multiple GPUs on [multiple nodes](https:
 
 ## Tensorboard
 
-Tensorboard comes included what is it
+[Tensorboard](https://www.tensorflow.org/tensorboard/get_started) comes included in a Conda installation of TensorFlow. It can be used to view your graph, monitor training progress and more. It can be used on the head node a of cluster for non-intensive uses. It can be used intensively on Tigressdata.
+
+## Using PyCharm on TigerGPU
+
+This video shows how to launch PyCharm on a TigerGPU node and use its debugger on a TensorFlow script:
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw" target="_blank">
+<img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="480" height="270" border="0" /></a>
+
+## Inference
+
+Some users are making use of [TensorRT](https://developer.nvidia.com/tensorrt), an SDK for high-performance deep learning inference.
+
+The Cascade Lake nodes on Della are capable on [Intel VNNI](https://www.intel.ai/vnni-enables-inference/#gs.yz55z2) (a.k.a. DL Boost). The idea is to cast the weights of your trained model to the INT8 data type. That is, effectively each weight takes an integer value between 0 and 255.
 
 ## Building from Source
 
@@ -153,13 +166,6 @@ $ cd
 $ python
 >>> import tensorflow as tf
 ```
-
-## Using PyCharm on TigerGPU
-
-This video shows how to launch PyCharm on a TigerGPU node and use its debugger on a TensorFlow script:
-
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw" target="_blank">
-<img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="480" height="270" border="0" /></a>
 
 ## Where to Store Your Files
 
