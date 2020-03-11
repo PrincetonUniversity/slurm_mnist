@@ -139,7 +139,7 @@ For hyperparameter tuning consider using a [job array](https://github.com/Prince
 
 ## Tensorboard
 
-[Tensorboard](https://www.tensorflow.org/tensorboard/get_started) comes included in a Conda installation of TensorFlow. It can be used to view your graph, monitor training progress and more. It can be used on the head node of a cluster in non-intensive cases. It can be used intensively on Tigressdata.
+[Tensorboard](https://www.tensorflow.org/tensorboard/get_started) comes included in a Conda installation of TensorFlow. It can be used to view your graph, monitor training progress and more. It can be used on the head node of a cluster in non-intensive cases. It can be used intensively on Tigressdata. See this [page](https://researchcomputing.princeton.edu/sshX) for using graphics on the HPC clusters.
 
 ## Using PyCharm on TigerGPU
 
