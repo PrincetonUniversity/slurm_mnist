@@ -7,7 +7,7 @@ This page provides examples of how to use TensorFlow on CPUs. TensorFlow has man
 ```
 $ ssh adroit  # or another cluster
 $ module load anaconda3
-$ conda create --name tf2-cpu tensorflow=2.0 <package-2> <package-3> ... <package-N>
+$ conda create --name tf2-cpu tensorflow <package-2> <package-3> ... <package-N>
 ```
 
 If you go over quota then run the `checkquota` command and follow the link at the bottom of the output to request more space. You can also use `--prefix` as shown <a href="https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/03_your_first_gpu_job">here</a>.
@@ -33,6 +33,10 @@ scipy              pkgs/main/linux-64::scipy-1.3.1-py37h7c811a0_0
 ```
 
 We see that several packages based on the Intel Math kernel Library (MKL) are installed with TensorFlow.
+
+## Vectorization
+
+If you follow the procedure above you will get a TensorFlow version which tkaes advantange of MKL via MKL-DNN. The INFO message you will get on a broadwell node, for instance, is "This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA". If you land on a Cascade Lake node you will get "This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA". You see that it will automatically utilize the AVX512 instructions on the newer cascade lake machine.
 
 ## Parallelism
 
