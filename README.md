@@ -127,7 +127,7 @@ Type `Ctrl+C` to exit the `watch` command. Type `exit` to leave the compute node
 
 TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make the appropriate changes to your TensorFlow script. This is covered next.
 
-## Distributed Training or Using Mulitiple GPUs
+## Distributed Training or Using Multiple GPUs
 
 Most models can be trained on a single GPU. If you are effectively using the GPU as determined by the procedure above then you may consider running on multiple GPUs. In general this will lead to shorter training times but because more resources are required the queue time will increase. When using more resources for your job you should always do a scaling analysis. Here is an [example](https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/05_multithreaded_numpy) for CPUs (see table at the bottom).
 
