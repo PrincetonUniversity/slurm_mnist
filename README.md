@@ -30,6 +30,8 @@ $ conda create --name=tf2-gpu --channel https://public.dhe.ibm.com/ibmdl/export/
 $ conda activate tf2-gpu
 ```
 
+Be sure to include `conda activate tf2-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
+
 ## Example
 
 Test the installation by running a short job. First, download the necessary data:
