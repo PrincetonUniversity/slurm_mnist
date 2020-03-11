@@ -47,7 +47,7 @@ $ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
 $ cd slurm_mnist
 ```
 
-You will need to enter your email address in `job.slurm`. Then submit the job:
+Use a text editor like `vim` or `emacs` to enter your email address in `job.slurm`. Then submit the job:
 
 ```
 $ sbatch job.slurm
