@@ -81,9 +81,9 @@ Here is the Slurm script (`job.slurm`):
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
-#SBATCH --mem=4G                 # total memory per node
+#SBATCH --mem=4G                 # total memory per node (default is 4 GB per CPU-core)
 #SBATCH --gres=gpu:1             # number of gpus per node
-#SBATCH --time=00:01:00          # total run time limit (HH:MM:SS)
+#SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 
 module purge
 module load anaconda3
