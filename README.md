@@ -150,9 +150,9 @@ This video shows how to launch PyCharm on a TigerGPU compute node and use its de
 
 ## Inference
 
-Some users are making use of [TensorRT](https://developer.nvidia.com/tensorrt), an SDK for high-performance deep learning inference.
+Some TigerGPU users are making use of [TensorRT](https://developer.nvidia.com/tensorrt), an SDK for high-performance deep learning inference.
 
-The Cascade Lake nodes on Della are capable on [Intel VNNI](https://www.intel.ai/vnni-enables-inference/#gs.yz55z2) (a.k.a. DL Boost). The idea is to cast the weights of your trained model to the INT8 data type. That is, effectively each weight takes an integer value between 0 and 255.
+The Cascade Lake nodes on Della are capable of Intel [Vector Neural Net Instructions]((https://www.intel.ai/vnni-enables-inference/#gs.yz55z2)) (VNNI) (a.k.a. DL Boost). The idea is to cast the FLOAT32 weights of your trained model to the INT8 data type.
 
 ## Building from Source
 
