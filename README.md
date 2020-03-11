@@ -105,7 +105,7 @@ Even when using a GPU there are still operations that are carried out on the CPU
 
 On TigerGPU, there are seven CPU-cores for every one GPU. Try values of `<T>` from 1 to 7 to see where the optimal value is.
 
-## GPU utilization
+## GPU Utilization
 
 To see how effectively your job is using the GPU, immediately after submitting the job run the following command:
 
