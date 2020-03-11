@@ -34,7 +34,7 @@ Be sure to include `conda activate tf2-gpu` and `#SBATCH --gres=gpu:1` in your S
 
 ## Example
 
-Test the installation by running a short job. First, download the necessary data on the head node where there is internet access:
+Test the installation by running a short job. First, download the necessary data. The compute nodes do not have internet access so we do the download on the head node:
 
 ```bash
 $ python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
