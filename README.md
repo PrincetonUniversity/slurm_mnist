@@ -125,6 +125,8 @@ In the command above, you must replace XX and YY with the actual values (e.g., `
 
 Type `Ctrl+C` to exit the `watch` command. Type `exit` to leave the compute node and return to the head node.
 
+### Common Mistakes
+
 TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make the appropriate changes to your TensorFlow script. This is covered next.
 
 ## Distributed Training or Using Multiple GPUs
