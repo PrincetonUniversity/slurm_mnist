@@ -143,7 +143,7 @@ For hyperparameter tuning consider using a [job array](https://github.com/Prince
 
 ## Using PyCharm on TigerGPU
 
-This video shows how to launch PyCharm on a TigerGPU node and use its debugger on a TensorFlow script:
+This video shows how to launch PyCharm on a TigerGPU compute node and use its debugger on a TensorFlow script:
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=0XmZsfixAdw" target="_blank">
 <img src="http://img.youtube.com/vi/0XmZsfixAdw/0.jpg" alt="PyCharm" width="480" height="270" border="0" /></a>
