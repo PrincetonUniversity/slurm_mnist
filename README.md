@@ -42,9 +42,14 @@ $ python -c "import tensorflow as tf; tf.keras.datasets.mnist.load_data()"
 
 The above command will download `mnist.npz` into the directory `~/.keras/datasets`. To run the example follow these commands:
 
-```
+```bash
 $ git clone https://github.com/PrincetonUniversity/slurm_mnist.git
 $ cd slurm_mnist
+```
+
+You will need to enter your email address in `job.slurm`. Then submit the job:
+
+```
 $ sbatch job.slurm
 ```
 
