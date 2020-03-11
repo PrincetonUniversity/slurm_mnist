@@ -139,6 +139,17 @@ TensorFlow offers an approach for using multiple GPUs on [multiple nodes](https:
 
 For hyperparameter tuning consider using a [job array](https://github.com/PrincetonUniversity/hpc_beginning_workshop/tree/master/06_slurm). This will allow you to run multiple jobs with one `sbatch` command. Each job within the array trains the network using a different set of parameters.
 
+## Suppresing INFO Statements
+
+At these lines to the top of your Python script to prevent INFO statements from appearing the output:
+
+```python
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
+```
+
+The default value is '0' while the max is '3' where everthing besides ERROR messages are suppressed.
+
 ## Tensorboard
 
 [Tensorboard](https://www.tensorflow.org/tensorboard/get_started) comes included in a Conda installation of TensorFlow. It can be used to view your graph, monitor training progress and more. It can be used on the head node of a cluster in non-intensive cases. It can be used intensively on Tigressdata. See this [page](https://researchcomputing.princeton.edu/sshX) for using graphics on the HPC clusters.
