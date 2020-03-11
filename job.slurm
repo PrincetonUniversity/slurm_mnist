@@ -11,4 +11,4 @@ module purge
 module load anaconda3
 conda activate tf2-gpu
 
-srun python mnist2_classify.py
+srun python mnist_classify.py
