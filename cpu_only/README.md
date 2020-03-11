@@ -36,7 +36,7 @@ We see that several packages based on the Intel Math kernel Library (MKL) are in
 
 ## Vectorization
 
-If you follow the procedure above you will get a TensorFlow version which tkaes advantange of MKL via MKL-DNN. The INFO message you will get on a broadwell node, for instance, is "This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA". If you land on a Cascade Lake node you will get "This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA". You see that it will automatically utilize the AVX512 instructions on the newer cascade lake machine.
+If you follow the procedure above you will get a TensorFlow version which tkaes advantange of MKL via MKL-DNN. The INFO message you will get on a broadwell node, for instance, is "This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 FMA". If you land on a Cascade Lake node you will get "This TensorFlow binary is optimized with Intel(R) MKL-DNN to use the following CPU instructions in performance critical operations:  SSE4.1 SSE4.2 AVX AVX2 AVX512F FMA". You see that it will automatically utilize the AVX512 instructions on the newer Cascade Lake node.
 
 ## Parallelism
 
