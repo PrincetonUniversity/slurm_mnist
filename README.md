@@ -148,7 +148,7 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 ```
 
-The default value is '0' while the max is '3' where everthing besides ERROR messages are suppressed.
+The default value is '0' while the max is '3' where even ERROR messages are suppressed.
 
 ## Tensorboard
 
