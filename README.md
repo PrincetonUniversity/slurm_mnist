@@ -94,7 +94,7 @@ srun python mnist_classify.py
 
 ## Multithreading
 
-Even when using a GPU there are still operations carried out on the CPU. Some of these operations have been written to take advantage of multi-threading via the Intel Math Kernel Library (MKL) (see [example](https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/05_multithreaded_numpy)). Try different values for `--cpus-per-task` to see if you get a speed advantage.
+Even when using a GPU there are still operations carried out on the CPU. Some of these operations have been written to take advantage of multi-threading via the Intel Math Kernel Library (MKL) (see [example](https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/05_multithreaded_numpy)). Try different values for `--cpus-per-task` to see if you get a speed advantage:
 
 ```
 #!/bin/bash
@@ -103,7 +103,7 @@ Even when using a GPU there are still operations carried out on the CPU. Some of
 #SBATCH --cpus-per-task=<T>      # cpu-cores per task (>1 if multi-threaded tasks)
 ```
 
-On TigerGPU, there are seven CPU-cores for every one GPU. Try values of `<T>` above from 1 to 7 to see where the optimal value is.
+On TigerGPU, there are seven CPU-cores for every one GPU. Try values of `<T>` from 1 to 7 to see where the optimal value is.
 
 ## Examining GPU utilization
 
