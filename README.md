@@ -141,7 +141,7 @@ For hyperparameter tuning consider using a [job array](https://github.com/Prince
 
 ## Suppresing INFO Statements
 
-At these lines to the top of your Python script to prevent INFO statements from appearing the output:
+Add these lines to the top of your Python script to prevent INFO statements from appearing in the output:
 
 ```python
 import os
