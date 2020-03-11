@@ -109,25 +109,23 @@ On TigerGPU, there are seven CPU-cores for every one GPU. Try doing a set of run
 
 ## GPU Utilization
 
-To see how effectively your job is using the GPU, immediately after submitting the job run the following command:
+To see how effectively your job is using the GPU, after submitting the job run the following command:
 
 ```
 $ squeue -u $USER
 ```
 
-The rightmost column labeled "NODELIST(REASON)" gives the name of the node where your job is running. SSH to this node:
+The rightmost column labeled "NODELIST(REASON)" gives the name of the node where your job is running. Connect to this node:
 
 ```
 $ ssh tiger-iXXgYY
 ```
 
-Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a percentage value indicating how effectively your code is using the GPU. The memory allocated to the GPU is also available. You will see that only about 16% of the GPU cores are utilized. For a simple tutorial like this, performance is not a concern. However, when you begin running your research codes you should repeat this analysis to ensure that any GPUs you use are being nearly fully utilized.
+In the command above, you must replace XX and YY with the actual values (e.g., `ssh tiger-i19g1`). Once on the compute node run `watch -n 1 gpustat`. This will show you a percentage value indicating how effectively your code is using the GPU. The memory allocated to the GPU is also available. TensorFlow by default takes all available GPU memory. For this specific example you will see that only about 10% of the GPU cores are utilized. Given that a CNN is being trained on small images (i.e., 28x28 pixels) this is not surprising. You should repeat this analysis with your actual research code to ensure that the GPU is being utilized. For jobs that run for more than 10 minutes you can check utilization by looking at the [TigerGPU utilization dashboard](https://researchcomputing.princeton.edu/node/7171). See the bottom of that page for tips on improving utilization.
 
-Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
+Type `Ctrl+C` to exit the `watch` command. Type `exit` to leave the compute node and return to the head node.
 
-To increase GPU utilization you may try increasing the batch size. See the bottom of the TigerGPU [utilization dashboard](https://researchcomputing.princeton.edu/node/7171) for more on this.
-
-TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make changes to your TensorFlow script. This is covered next.
+TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make the appropriate changes to your TensorFlow script. This is covered next.
 
 ## Distributed Training or Using Mulitiple GPUs
 
