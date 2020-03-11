@@ -94,7 +94,7 @@ srun python mnist_classify.py
 
 ## Multithreading
 
-Even when using a GPU there are still operations carried out on the CPU. Some of these operations have been written to take advantage of multi-threading via the Intel Math Kernel Library (MKL) (see [example](https://github.com/PrincetonUniversity/gpu_programming_intro/tree/master/05_multithreaded_numpy)). Try different values for `--cpus-per-task` to see if you get a speed advantage:
+Even when using a GPU there are still operations that are carried out on the CPU. Some of these operations have been written to take advantage of multithreading. Try different values of `--cpus-per-task` to see if you get a speed-up:
 
 ```
 #!/bin/bash
