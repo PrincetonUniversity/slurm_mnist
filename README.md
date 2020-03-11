@@ -105,12 +105,12 @@ Even when using a GPU there are still operations that are carried out on the CPU
 
 On TigerGPU, there are seven CPU-cores for every one GPU. Try values of `<T>` from 1 to 7 to see where the optimal value is.
 
-## Examining GPU utilization
+## GPU utilization
 
 To see how effectively your job is using the GPU, immediately after submitting the job run the following command:
 
 ```
-$ squeue -u <your-username>
+$ squeue -u $USER
 ```
 
 The rightmost column labeled "NODELIST(REASON)" gives the name of the node where your job is running. SSH to this node:
@@ -123,7 +123,7 @@ Once on the compute node run `watch -n 1 nvidia-smi`. This will show you a perce
 
 Type `Ctrl+C` to exit the `watch` screen. Type `exit` to return to the head node.
 
-[View](https://researchcomputing.princeton.edu/node/7171) the GPU utilization dashboard for TigerGPU.
+To increase GPU utilization you may try increasing the batch size. See the bottom of the TigerGPU [utilization dashboard](https://researchcomputing.princeton.edu/node/7171) for more on this.
 
 TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make changes to your TensorFlow script. This is covered next.
 
