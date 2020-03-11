@@ -105,7 +105,7 @@ Even when using a GPU there are still operations that are carried out on the CPU
 #SBATCH --cpus-per-task=<T>      # cpu-cores per task (>1 if multi-threaded tasks)
 ```
 
-On TigerGPU, there are seven CPU-cores for every one GPU. Try values of `<T>` from 1 to 7 to see where the optimal value is.
+On TigerGPU, there are seven CPU-cores for every one GPU. Try doing a set of runs where you vary `<T>` from 1 to 7 to find the optimal value.
 
 ## GPU Utilization
 
