@@ -156,7 +156,7 @@ The Cascade Lake nodes on Della are capable on [Intel VNNI](https://www.intel.ai
 
 ## Building from Source
 
-The procedure below was found to work on Della:
+At times it may be necessary to build TensorFlow [from source](https://www.tensorflow.org/install/source). The procedure below was found to work on Della:
 
 ```bash
 # ssh della
