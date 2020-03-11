@@ -127,7 +127,7 @@ Type `Ctrl+C` to exit the `watch` command. Type `exit` to leave the compute node
 
 ### Common Mistakes
 
-TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make the appropriate changes to your TensorFlow script. This is covered in the next section. A second mistake occurs when someone accidentally Conda installs `tensorflow` instead of `tensorflow-gpu`. The former package cannot use the GPU.
+TensorFlow will run all possible operations on the GPU by default. However, if you request more than one GPU in your Slurm script TensorFlow will only use one and ignore the others unless your actively make the appropriate changes to your TensorFlow script. This is covered in the next section. A second common mistake is to accidentally Conda install `tensorflow` instead of `tensorflow-gpu`. The former package cannot use GPUs.
 
 ## Distributed Training or Using Multiple GPUs
 
