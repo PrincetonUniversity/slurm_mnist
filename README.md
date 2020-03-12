@@ -53,6 +53,8 @@ Use a text editor like `vim` or `emacs` to enter your email address in `job.slur
 $ sbatch job.slurm
 ```
 
+You can monitor the status of the job with `squeue -u $USER`. Once the job runs, you'll have a `slurm-xxxxx.out` file in the `slurm_mnist` directory. This log file contains both TensorFlow and Slurm output.
+
 Below is the TensorFlow script (`mnist_classify.py`) which trains a classifier on the MNIST data set:
 
 ```python
