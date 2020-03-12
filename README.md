@@ -187,7 +187,8 @@ $ pip install -U --user keras_applications --no-deps pip install -U --user keras
 $ cd /tmp/bazel/
 $ wget https://github.com/bazelbuild/bazel/releases/download/2.0.0/bazel-2.0.0-installer-linux-x86_64.sh
 $ chmod +x bazel-2.0.0-installer-linux-x86_64.sh
-$ ./bazel-2.0.0-installer-linux-x86_64.sh --prefix=/tmp/bazel export PATH=/tmp/bazel/bin:$PATH
+$ ./bazel-2.0.0-installer-linux-x86_64.sh --prefix=/tmp/bazel
+$ export PATH=/tmp/bazel/bin:$PATH
 
 $ cd ~/sw
 $ git clone https://github.com/tensorflow/tensorflow.git
