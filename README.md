@@ -146,7 +146,7 @@ TensorFlow offers an approach for using multiple GPUs on [multiple nodes](https:
 
 For hyperparameter tuning consider using a [job array](https://github.com/PrincetonUniversity/hpc_beginning_workshop/tree/master/06_slurm). This will allow you to run multiple jobs with one `sbatch` command. Each job within the array trains the network using a different set of parameters.
 
-## Suppresing INFO Statements
+## Suppressing INFO Statements
 
 Add these lines to the top of your Python script to prevent INFO statements from appearing in the output:
 
