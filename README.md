@@ -174,7 +174,7 @@ Some TigerGPU users are making use of [TensorRT](https://developer.nvidia.com/te
 
 The Cascade Lake nodes on Della are capable of Intel [Vector Neural Net Instructions]((https://www.intel.ai/vnni-enables-inference/#gs.yz55z2)) (VNNI) (a.k.a. DL Boost). The idea is to cast the FLOAT32 weights of your trained model to the INT8 data type.
 
-## Writing TensorFlow Scripts in R or Juila
+## Writing TensorFlow Scripts in R or Julia
 
 See [this post](https://oncomputingwell.princeton.edu/2019/06/installing-and-using-tensorflow-with-r) by Danny Simpson on using TensorFlow with R. For version 2.x see [TensorFlow for R](https://tensorflow.rstudio.com).
 
