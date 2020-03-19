@@ -22,7 +22,7 @@ Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Sl
 
 ```
 $ module load anaconda3
-$ conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow-gpu
+$ conda create --name=tf-gpu --channel https://public.dhe.ibm.com/ibmdl/export/pub/software/server/ibm-ai/conda tensorflow-gpu=1.15
 $ conda activate tf-gpu
 # accept the license agreement if asked
 ```
