@@ -8,6 +8,14 @@ $ conda create --name tf-gpu tensorflow-gpu=1.15 <package-2> <package-3> ... <pa
 $ conda activate tf-gpu
 ```
 
+Or maybe you want a few additional packages like keras and matplotlib:
+
+```
+$ module load anaconda3
+$ conda create --name tf-gpu tensorflow-gpu=1.15 keras matplotlib <package-4> <package-5> ... <package-N>
+$ conda activate tf-gpu
+```
+
 Be sure to include `conda activate tf-gpu` and `#SBATCH --gres=gpu:1` in your Slurm script.
 
 ### Traverse
