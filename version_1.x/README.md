@@ -1,5 +1,7 @@
 # Version 1.x
 
+Note that keras is not included in version 1.x of TensorFlow. See the second example below for TigerGPU for keras installation directions. If you are new to installing Python packages then see <a href="https://researchcomputing.princeton.edu/python">this page</a>&nbsp;before continuing.
+
 ### TigerGPU or Adroit
 
 ```
