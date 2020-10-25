@@ -1,7 +1,3 @@
-from __future__ import absolute_import, division
-from __future__ import print_function
-from __future__ import unicode_literals
-
 import tensorflow as tf
 
 mnist = tf.keras.datasets.mnist
@@ -15,21 +11,10 @@ model = tf.keras.models.Sequential([
   tf.keras.layers.Dense(10, activation='softmax')])
 
 model.compile(optimizer='adam',
-              loss='sparse_categorical_crossentropy',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
               metrics=['accuracy'])
 
 model.fit(x_train, y_train, epochs=10)
-model.evaluate(x_test, y_test)
+test_loss, test_acc = model.evaluate(x_test, y_test, verbose=2)
 
-
-#@title Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# https://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+print('\nTest accuracy:', test_acc)
