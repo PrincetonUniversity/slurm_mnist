@@ -1,1 +1,1 @@
-## Main page is here: <a href="https://researchcomputing.princeton.edu/tensorflow">https://researchcomputing.princeton.edu/tensorflow</a>
+## Main page is here: <a href="https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow">https://researchcomputing.princeton.edu/support/knowledge-base/tensorflow</a>
