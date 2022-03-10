@@ -8,7 +8,6 @@
 #SBATCH --time=00:05:00          # total run time limit (HH:MM:SS)
 #SBATCH --mail-type=begin        # send email when job begins
 #SBATCH --mail-type=end          # send email when job ends
-#SBATCH --mail-type=fail         # send email if job fails
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
