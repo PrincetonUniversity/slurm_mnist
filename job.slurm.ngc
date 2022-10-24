@@ -11,4 +11,4 @@
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
-singularity exec --nv $HOME/software/tensorflow_21.08-tf2-py3.sif python3 mnist_classify.py
+singularity exec --nv $HOME/software/tensorflow_22.09-tf2-py3.sif python3 mnist_classify.py
