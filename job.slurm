@@ -11,7 +11,7 @@
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
-module load anaconda3/2022.10
+module load anaconda3/2023.3
 conda activate tf2-gpu
 
 python mnist_classify.py
