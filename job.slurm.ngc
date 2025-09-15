@@ -11,4 +11,4 @@
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
-apptainer exec --nv $HOME/software/tensorflow_22.09-tf2-py3.sif python3 mnist_classify.py
+apptainer exec --nv $HOME/software/tensorflow_25.02-tf2-py3.sif python3 mnist_classify.py
