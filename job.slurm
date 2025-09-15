@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=tf2-test      # create a short name for your job
+#SBATCH --job-name=tf-test      # create a short name for your job
 #SBATCH --nodes=1                # node count
 #SBATCH --ntasks=1               # total number of tasks across all nodes
 #SBATCH --cpus-per-task=1        # cpu-cores per task (>1 if multi-threaded tasks)
@@ -11,7 +11,7 @@
 #SBATCH --mail-user=<YourNetID>@princeton.edu
 
 module purge
-module load anaconda3/2024.6
-conda activate tf2-gpu
+module load anaconda3/2025.10
+conda activate tf-gpu
 
 python mnist_classify.py
